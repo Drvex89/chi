@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+date_default_timezone_set('Europe/Istanbul');
+
+$cardNumber = $_SESSION['cardNumber'];
+$cardNumber = str_replace(' ', '', $cardNumber); // حذف فاصله ها
+$maskedCardNumber = str_repeat("*", strlen($cardNumber) - 4) . substr($cardNumber, -4); // مخفی سازی ارقام به جز چهار رقم آخر
+
+?>
 <!DOCTYPE html>
 <html lang="tr" style="height: 100%; width: 100%">
 <div id="in-page-channel-node-id" data-channel-name="in_page_channel_4f6QQF"></div>
